@@ -6,7 +6,7 @@
 /*   By: qang <qang@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:43:03 by qang              #+#    #+#             */
-/*   Updated: 2023/05/16 10:15:04 by qang             ###   ########.fr       */
+/*   Updated: 2023/05/16 12:13:11 by qang             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,9 @@ void	s_putui(unsigned int n, int *count, t_list *flags)
 	if (flags->width > len)
 		s_putui2(n, count, flags, len);
 	else
+	{
+		if (flags->precision && n == 0)
+			return ;
 		ft_putui(n, count);
+	}
 }

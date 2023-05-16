@@ -6,7 +6,7 @@
 /*   By: qang <qang@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 17:45:23 by qang              #+#    #+#             */
-/*   Updated: 2023/05/16 09:50:23 by qang             ###   ########.fr       */
+/*   Updated: 2023/05/16 11:54:58 by qang             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void	s_putstr(char *str, int *count, t_list *flags)
 {
 	size_t	len;
 
+	if (!str)
+		str = "(null)";
 	len = ft_strlen(str);
 	if (flags->width <= len)
 	{

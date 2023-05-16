@@ -6,7 +6,7 @@
 /*   By: qang <qang@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 17:15:53 by qang              #+#    #+#             */
-/*   Updated: 2023/05/16 11:00:07 by qang             ###   ########.fr       */
+/*   Updated: 2023/05/16 15:18:22 by qang             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 	int		pad;
 	int		precision;
 	size_t	width;
+	size_t	prec;
 }	t_list;
 
 void	s_putchar(int c, int *count);

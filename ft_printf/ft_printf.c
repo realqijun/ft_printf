@@ -6,7 +6,7 @@
 /*   By: qang <qang@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 16:52:02 by qang              #+#    #+#             */
-/*   Updated: 2023/05/16 09:49:03 by qang             ###   ########.fr       */
+/*   Updated: 2023/05/16 15:21:33 by qang             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ static const char	*check_flags(const char *s, t_list *flags)
 	}
 	while (ft_isdigit(*s))
 		flags->width = (flags->width) * 10 + *(s++) - 48;
+	if (*s == '.')
+		while (ft_isdigit(*(++s)))
+			flags->prec = (flags->prec) * 10 + *s - 48;
 	return (s);
 }
 
@@ -51,6 +54,7 @@ static void	flag_init(t_list *flags)
 	flags->pad = 0;
 	flags->precision = 0;
 	flags->width = 0;
+	flags->prec = 0;
 }
 
 static void	print_var(const char *s, va_list vars, int *count, t_list *flags)

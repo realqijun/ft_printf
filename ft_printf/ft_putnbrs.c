@@ -6,7 +6,7 @@
 /*   By: qang <qang@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:14:14 by qang              #+#    #+#             */
-/*   Updated: 2023/05/16 11:01:56 by qang             ###   ########.fr       */
+/*   Updated: 2023/05/16 12:08:13 by qang             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	s_putnbr(int n, int *count, t_list *flags)
 		s_putnbr2(n, count, flags, len);
 	else
 	{
+		if (flags->precision && n == 0)
+			return ;
 		ft_putsign(n, count, flags);
 		ft_putnbr(n, count);
 	}
